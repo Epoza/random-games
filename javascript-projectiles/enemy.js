@@ -1,11 +1,15 @@
 export default class Enemy{
-    constructor(x, y, color, health){
-        this.x = x;
+
+    constructor(x, y, color, health, speedY){
+        //this.x = x;
+        this.x = Math.floor(Math.random() * x) + 1;
         this.y = y;
         this.color = color;
-        this.health = health;
+        this.health = Math.floor(Math.random() * health) + 1;
+        this.speedY = speedY
         this.width = 50;
         this.height = 50;
+        
     }
     draw(ctx){
         ctx.fillStyle = this.color;
@@ -14,6 +18,8 @@ export default class Enemy{
         }else {
             ctx.strokeStyle = this.color
         }
+        
+        this.y += this.speedY
 
         ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.strokeRect(this.x, this.y, this.width, this.height);
@@ -28,3 +34,8 @@ export default class Enemy{
         this.health -= damage
     }
 }
+
+//code for enemy touching bottom
+// if(this.y <= 0) {
+//     gameover
+// }

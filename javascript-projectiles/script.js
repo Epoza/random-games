@@ -14,16 +14,16 @@ const bulletController = new BulletController(canvas);
 const player = new Player(canvas.width / 2.2, canvas.height / 1.3, bulletController)
 
 const enemies = [
-    new Enemy(50, 20, "green", 5),
-    new Enemy(150, 20, "red", 5),
-    new Enemy(250, 20, "gold", 2),
-    new Enemy(350, 20, "green", 2),
-    new Enemy(450, 20, "gold", 10),
-    new Enemy(50, 100, "green", 5),
-    new Enemy(150, 100, "red", 5),
-    new Enemy(250, 100, "gold", 2),
-    new Enemy(350, 100, "green", 2),
-    new Enemy(450, 100, "gold", 20),
+    new Enemy(500, 20, "green", 5, 0.5),
+    new Enemy(500, 20, "red", 5, 0.5),
+    new Enemy(500, 20, "gold", 5, 0.5),
+    new Enemy(500, 20, "green", 5, 0.5),
+    new Enemy(500, 20, "gold", 10, 0.5),
+    new Enemy(500, 100, "green", 10, 0.5),
+    new Enemy(500, 100, "red", 10, 0.5),
+    new Enemy(500, 100, "gold", 20, 0.5),
+    new Enemy(500, 100, "green", 20, 0.5),
+    new Enemy(500, 100, "gold", 20, 0.5),
 ];
 
 function gameLoop() {
