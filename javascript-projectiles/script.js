@@ -9,21 +9,23 @@ let points = document.getElementById('points');
 canvas.width = 550
 canvas.height = 600
 
+
+
 const bulletController = new BulletController(canvas);
 // sets player location
 const player = new Player(canvas.width / 2.2, canvas.height / 1.3, bulletController)
 
 const enemies = [
-    new Enemy(500, 20, "green", 5, 0.5),
-    new Enemy(500, 20, "red", 5, 0.5),
-    new Enemy(500, 20, "gold", 5, 0.5),
-    new Enemy(500, 20, "green", 5, 0.5),
-    new Enemy(500, 20, "gold", 10, 0.5),
-    new Enemy(500, 100, "green", 10, 0.5),
-    new Enemy(500, 100, "red", 10, 0.5),
-    new Enemy(500, 100, "gold", 20, 0.5),
-    new Enemy(500, 100, "green", 20, 0.5),
-    new Enemy(500, 100, "gold", 20, 0.5),
+    new Enemy(500, 20, "green", 5, 1),
+    new Enemy(500, 20, "red", 5, 1),
+    new Enemy(500, 20, "gold", 5, 1),
+    new Enemy(500, 20, "green", 5, 1),
+    new Enemy(500, 20, "gold", 10, 1),
+    new Enemy(500, 100, "green", 10, 1),
+    new Enemy(500, 100, "red", 10, 1),
+    new Enemy(500, 100, "gold", 20, 1),
+    new Enemy(500, 100, "green", 20, 1),
+    new Enemy(500, 100, "gold", 20, 1),
 ];
 
 function gameLoop() {

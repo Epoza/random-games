@@ -1,0 +1,7 @@
+Next steps:
+1. add modal for gameover
+2. Respaqn  random enemies when killed
+
+bonus:
+1. MAke enemies quicker when n score
+2. Make enemies have more health when n scoregive player faster speed/ more bullets when n score

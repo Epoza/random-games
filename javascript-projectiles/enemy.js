@@ -12,6 +12,22 @@ export default class Enemy{
         
     }
     draw(ctx){
+
+        const open = document.getElementById('open');
+        const modalContainer = document.getElementById('modal-container');
+        const closeButton = document.getElementById('close-button');
+        let gameover = false
+
+        // Show the modal when game is over
+        open.addEventListener('click', () => {
+            modalContainer.classList.add('show')
+        })
+
+        // close the modal when clicked
+        closeButton.addEventListener('click', () => {
+            modalContainer.classList.remove('show')
+        })
+
         ctx.fillStyle = this.color;
         if(this.health > 1){
             ctx.strokeStyle = 'white'
@@ -19,7 +35,25 @@ export default class Enemy{
             ctx.strokeStyle = this.color
         }
         
-        this.y += this.speedY
+        if (this.y <= 600) {
+            this.y += this.speedY
+        }else{
+            this.speedY = 0
+            gameover = true
+        }
+
+        if(gameover === true){
+            gameover = false
+            // Show the modal when game is over
+            modalContainer.classList.add('show')
+
+            // close the modal when clicked
+            closeButton.addEventListener('click', () => {
+                location.reload()
+                modalContainer.classList.remove('show')
+            })
+        }
+
 
         ctx.fillRect(this.x, this.y, this.width, this.height);
         ctx.strokeRect(this.x, this.y, this.width, this.height);
@@ -33,6 +67,7 @@ export default class Enemy{
     takeDamage(damage){
         this.health -= damage
     }
+    
 }
 
 //code for enemy touching bottom
